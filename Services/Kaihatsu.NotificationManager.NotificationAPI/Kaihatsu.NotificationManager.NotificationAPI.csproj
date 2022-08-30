@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Kaihatsu.NotificationManager.Report.Razor\Kaihatsu.NotificationManager.Report.Razor.csproj" />
     <ProjectReference Include="..\..\Repository\Kaihatsu.NotificationManager.DAL.MSSQL\Kaihatsu.NotificationManager.DAL.MSSQL.csproj" />
     <ProjectReference Include="..\..\Repository\Kaihatsu.NotificationManager.DAL\Kaihatsu.NotificationManager.DAL.csproj" />
   </ItemGroup>

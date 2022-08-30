@@ -65,7 +65,7 @@ public class NotificationManagerRepository<T> : IRepositoryAsync<T> where T : cl
     {
         var item = await _managerContext
             .Set<T>()
-            .FindAsync(id, cancellationToken)
+            .FindAsync(new object[] { id }, cancellationToken)
             //.FirstOrDefaultAsync(item => item.Id == id, cancellationToken)
             .ConfigureAwait(false);
 
