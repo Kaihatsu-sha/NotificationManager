@@ -35,7 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManage
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reports", "Reports", "{DAD3D0CE-BB76-440F-9E50-DB85D3028788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaihatsu.NotificationManager.Report.Razor", "Kaihatsu.NotificationManager.Report.Razor\Kaihatsu.NotificationManager.Report.Razor.csproj", "{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "React", "React", "{9CCD1E40-C9CF-40DF-A7BD-666396AFC922}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.Report.Razor", "Services\Report generators\Kaihatsu.NotificationManager.Report.Razor\Kaihatsu.NotificationManager.Report.Razor.csproj", "{B48C2D75-FC37-4CAE-B0DE-E50AD242B821}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "kaihatsu.notificationmanager.ui.react", "UI\React\kaihatsu.notificationmanager.ui.react\kaihatsu.notificationmanager.ui.react.esproj", "{59DCADB9-6CFB-475D-84D8-142153AB9D87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +75,16 @@ Global
 		{CD240142-2848-4B42-B056-A1C0248B2134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD240142-2848-4B42-B056-A1C0248B2134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD240142-2848-4B42-B056-A1C0248B2134}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48C2D75-FC37-4CAE-B0DE-E50AD242B821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48C2D75-FC37-4CAE-B0DE-E50AD242B821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48C2D75-FC37-4CAE-B0DE-E50AD242B821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48C2D75-FC37-4CAE-B0DE-E50AD242B821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,7 +101,9 @@ Global
 		{FBAA596A-1002-4F91-ACBD-CE400D14D7AB} = {0D313CF2-4A1A-4C01-BE6A-3808566C6274}
 		{CD240142-2848-4B42-B056-A1C0248B2134} = {6A12002E-5D26-4316-A4C5-B6E9AAB93A67}
 		{DAD3D0CE-BB76-440F-9E50-DB85D3028788} = {C188568B-C722-432B-806D-1E552798FEFB}
-		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C} = {DAD3D0CE-BB76-440F-9E50-DB85D3028788}
+		{9CCD1E40-C9CF-40DF-A7BD-666396AFC922} = {099D30FB-7C76-4F7D-94D2-8CDF9FC43EB9}
+		{B48C2D75-FC37-4CAE-B0DE-E50AD242B821} = {DAD3D0CE-BB76-440F-9E50-DB85D3028788}
+		{59DCADB9-6CFB-475D-84D8-142153AB9D87} = {9CCD1E40-C9CF-40DF-A7BD-666396AFC922}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB849C63-7AEC-4890-AAD1-A0D69A7B98FC}
