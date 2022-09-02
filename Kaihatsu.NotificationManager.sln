@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{545609CD-BBD3-43DA-9156-F77187C28E62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C188568B-C722-432B-806D-1E552798FEFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{099D30FB-7C76-4F7D-94D2-8CDF9FC43EB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6A12002E-5D26-4316-A4C5-B6E9AAB93A67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.Core", "Core\Kaihatsu.NotificationManager.Core\Kaihatsu.NotificationManager.Core.csproj", "{B470569A-8C2D-4172-9DA8-A5C23AE1E33A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.DAL", "Repository\Kaihatsu.NotificationManager.DAL\Kaihatsu.NotificationManager.DAL.csproj", "{05478EB6-D176-4EA1-A4A8-CA52269CE8CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.DAL.MSSQL", "Repository\Kaihatsu.NotificationManager.DAL.MSSQL\Kaihatsu.NotificationManager.DAL.MSSQL.csproj", "{91F7D4AC-687E-4B14-8071-57E707BF5845}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notification", "{6A49A61D-48D0-4112-B6FE-1943AB056938}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.NotificationAPI", "Services\Kaihatsu.NotificationManager.NotificationAPI\Kaihatsu.NotificationManager.NotificationAPI.csproj", "{17CB4F58-5576-47CE-A774-D2FF44F7C018}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduler", "Scheduler", "{0D313CF2-4A1A-4C01-BE6A-3808566C6274}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sender", "Sender", "{E1D6A8AA-EC6E-4175-9EC8-6EBF8A818EB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.SenderAPI", "Services\Kaihatsu.NotificationManager.SenderAPI\Kaihatsu.NotificationManager.SenderAPI.csproj", "{DF135429-6EE7-4611-8FF3-E631811F0FDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.SchedulerAPI", "Services\Kaihatsu.NotificationManager.SchedulerAPI\Kaihatsu.NotificationManager.SchedulerAPI.csproj", "{FBAA596A-1002-4F91-ACBD-CE400D14D7AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0F33F9B7-C771-4B09-BEA5-6BA362578326}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaihatsu.NotificationManager.DAL.Entities", "Repository\Kaihatsu.NotificationManager.DAL.Entities\Kaihatsu.NotificationManager.DAL.Entities.csproj", "{CD240142-2848-4B42-B056-A1C0248B2134}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reports", "Reports", "{DAD3D0CE-BB76-440F-9E50-DB85D3028788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaihatsu.NotificationManager.Report.Razor", "Kaihatsu.NotificationManager.Report.Razor\Kaihatsu.NotificationManager.Report.Razor.csproj", "{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B470569A-8C2D-4172-9DA8-A5C23AE1E33A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B470569A-8C2D-4172-9DA8-A5C23AE1E33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B470569A-8C2D-4172-9DA8-A5C23AE1E33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B470569A-8C2D-4172-9DA8-A5C23AE1E33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05478EB6-D176-4EA1-A4A8-CA52269CE8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05478EB6-D176-4EA1-A4A8-CA52269CE8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05478EB6-D176-4EA1-A4A8-CA52269CE8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05478EB6-D176-4EA1-A4A8-CA52269CE8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F7D4AC-687E-4B14-8071-57E707BF5845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F7D4AC-687E-4B14-8071-57E707BF5845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F7D4AC-687E-4B14-8071-57E707BF5845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F7D4AC-687E-4B14-8071-57E707BF5845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CB4F58-5576-47CE-A774-D2FF44F7C018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CB4F58-5576-47CE-A774-D2FF44F7C018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CB4F58-5576-47CE-A774-D2FF44F7C018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CB4F58-5576-47CE-A774-D2FF44F7C018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF135429-6EE7-4611-8FF3-E631811F0FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF135429-6EE7-4611-8FF3-E631811F0FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF135429-6EE7-4611-8FF3-E631811F0FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF135429-6EE7-4611-8FF3-E631811F0FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBAA596A-1002-4F91-ACBD-CE400D14D7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAA596A-1002-4F91-ACBD-CE400D14D7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAA596A-1002-4F91-ACBD-CE400D14D7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA596A-1002-4F91-ACBD-CE400D14D7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD240142-2848-4B42-B056-A1C0248B2134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD240142-2848-4B42-B056-A1C0248B2134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD240142-2848-4B42-B056-A1C0248B2134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD240142-2848-4B42-B056-A1C0248B2134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B470569A-8C2D-4172-9DA8-A5C23AE1E33A} = {545609CD-BBD3-43DA-9156-F77187C28E62}
+		{05478EB6-D176-4EA1-A4A8-CA52269CE8CC} = {6A12002E-5D26-4316-A4C5-B6E9AAB93A67}
+		{91F7D4AC-687E-4B14-8071-57E707BF5845} = {6A12002E-5D26-4316-A4C5-B6E9AAB93A67}
+		{6A49A61D-48D0-4112-B6FE-1943AB056938} = {C188568B-C722-432B-806D-1E552798FEFB}
+		{17CB4F58-5576-47CE-A774-D2FF44F7C018} = {6A49A61D-48D0-4112-B6FE-1943AB056938}
+		{0D313CF2-4A1A-4C01-BE6A-3808566C6274} = {C188568B-C722-432B-806D-1E552798FEFB}
+		{E1D6A8AA-EC6E-4175-9EC8-6EBF8A818EB8} = {C188568B-C722-432B-806D-1E552798FEFB}
+		{DF135429-6EE7-4611-8FF3-E631811F0FDE} = {E1D6A8AA-EC6E-4175-9EC8-6EBF8A818EB8}
+		{FBAA596A-1002-4F91-ACBD-CE400D14D7AB} = {0D313CF2-4A1A-4C01-BE6A-3808566C6274}
+		{CD240142-2848-4B42-B056-A1C0248B2134} = {6A12002E-5D26-4316-A4C5-B6E9AAB93A67}
+		{DAD3D0CE-BB76-440F-9E50-DB85D3028788} = {C188568B-C722-432B-806D-1E552798FEFB}
+		{CA9ACD0E-4450-4027-AFB8-9C257B81C25C} = {DAD3D0CE-BB76-440F-9E50-DB85D3028788}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB849C63-7AEC-4890-AAD1-A0D69A7B98FC}
+	EndGlobalSection
+EndGlobal
