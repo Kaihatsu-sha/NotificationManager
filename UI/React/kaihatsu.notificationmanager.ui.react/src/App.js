@@ -7,7 +7,8 @@ function App() {
   
   useEffect(()=>{
     console.log('useEffect');
-  },[messageList]);
+    setMessageList([{author:"I",text:"Bal bla"},{author:"YOU",text:"Bal bla-bla"}])
+  },[]);
 
   const callBack = (author, message)=>{
     setMessageList([{author:author, text:message},{author:'robot', text:'Bad idea'}]);
