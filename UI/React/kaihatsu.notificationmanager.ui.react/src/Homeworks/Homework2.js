@@ -3,38 +3,16 @@ import * as Material from '@mui/material';
 
 export function PrintList({ props }) {
     console.log('PrintList');
-
+console.log(props);
     return (
         <div className="ListItems">{
             props.map((message, index) => {
-                return <div key={index}><PrintMessage author={message.author} text={message.text} index={index} /></div>
+                return <PrintMessage key={index} author={message.author} text={message.text} index={index} />
             })}
         </div>
         );
 };
 
-export function PrintChats({ props }) {
-    console.log('PrintChats');
-
-    return (
-        <div className="ListItems">{
-            props.map((chat, index) => {
-                return (
-                    <div key={index}>
-                    <Material.List sx={{ width: '100%', maxWidth: 360, bgcolor: 'primary.main' }}>
-                        <Material.ListItem alignItems="center">
-                        <Material.ListItemText
-                            primary={chat.id}
-                            secondary={chat.name}
-                        />
-                        </Material.ListItem>
-                    </Material.List>
-                    </div>
-                );
-            })}
-        </div>
-        );
-};
 
 export function PrintMessage({ index, author, text }) {
     console.log('PrintMessage');
