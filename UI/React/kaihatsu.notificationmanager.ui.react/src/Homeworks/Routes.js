@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
@@ -8,6 +8,7 @@ import {
     Routes,
     Route,
     Link,
+    useMatch
 } from "react-router-dom";
 
 import Main from './Main'
@@ -15,7 +16,6 @@ import { Chats } from './Chats'
 import Profile from "./Profile";
 
 function Routed() {
-    console.log('Routed');
     return (
         <BrowserRouter>
             <Navigation />
@@ -41,6 +41,13 @@ function Navigation() {
         event.stopPropagation();
         setTitle(event.target.innerText);
     };
+
+    // const params = useMatch();
+    // useEffect(()=>{
+        
+    //     console.log(params);
+    //     //setTitle();
+    // },[title]);
 
     return (
 
