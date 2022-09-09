@@ -1,45 +1,46 @@
 import * as React from "react";
 import { PrintList, UIForm, PrintChat } from './Homework2'
 import { useParams, Link } from 'react-router-dom'
-
+import { useSelector, useDispatch } from 'react-redux'
+import PrintMessageList from "./Messages";
 
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import * as Material from '@mui/material';
+import { addChat, removeChat } from '../store/Chat/Reducer'
+import { getChatList } from '../store/Chat/Selectors'
+import { addMessage, removeMessage } from '../store/Message/Reducer'
+import { getMessageList, getMessageListByChatId } from '../store/Message/Selectors'
 
 export function Chats() {
     const params = useParams();
-    const [chatList, setChatList] = React.useState([{ name: 'support', messages: [] }, { name: 'default', messages: [] }]);
+
+//   const getSelectedChat = React.useMemo(() => getMessageListByChatId(params.chatId), [params.chatId]);
+//   const selectedChat = useSelector(getSelectedChat);
+
+    const chatList = useSelector(getChatList);
+    const messageList = useSelector(getMessageList);
+
+    const dispatch = useDispatch()
 
     React.useEffect(() => {
         if (chatList[params.chatId]) {
-            if (chatList[params.chatId].messages.length >= 1) {
-                let lastAuthor = chatList[params.chatId].messages.at(-1).author;
+            //let messagesByChatId = useSelector(getMessageListByChatId(params.chatId));
+            let messagesByChatId = messageList.filter(x => x.chatId == params.chatId);
+            console.log(messagesByChatId);
+            if (messagesByChatId.length >= 1) {
+                let lastAuthor = messagesByChatId.at(-1).author;
                 if (lastAuthor != 'robot') {
-
-                    setChatList((prevState) =>
-                        //   [...prevState,{ name: 'supportw', messages: [{ author: "i", text: "ss" }] }]);
-                        //  prevState.map((chat, index)=>{
-                        //     chat => chat.index === params.chatId ? {} : chat
-                        //     }
-                        //     ));
-                        prevState.map((el, index) =>
-                            (index == params.chatId ? { ...el, messages: [...el.messages, { author: 'robot', text: 'Bad idea' }] } : el)
-                        )
-                    );
+                    dispatch(addMessage({chatId: params.chatId, author: 'robot', text: 'Bad idea' }));
                 }
             }
         }
-    }, [chatList]);
+    }, [messageList]);
 
     const callBack = (callBackObject) => {
-        setChatList(prevState =>
-            prevState.map((el, index) =>
-                (index == params.chatId ? { ...el, messages: [...el.messages, { author: callBackObject.author, text: callBackObject.message }] } : el)
-            )
-        );
+        dispatch(addMessage(callBackObject));
     };
 
     const Item = styled(Paper)(({ theme }) => ({
@@ -54,8 +55,6 @@ export function Chats() {
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                    </Grid>
                     <Grid item xs={6} md={4}>
                         <Item><PrintChats chats={chatList} /></Item>
                     </Grid>
@@ -68,15 +67,19 @@ export function Chats() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <Item><UIForm updateStateApp={callBack}></UIForm></Item>
-                </Grid>
+            <Grid container spacing={2}>                
                 <Grid item xs={6} md={4}>
                     <Item><PrintChats chats={chatList} /></Item>
                 </Grid>
+                <Grid item xs={2} md={6}>
+                    <Item><UIForm updateStateApp={callBack}></UIForm></Item>
+                    <Item></Item>
+                    <Item><PrintMessageList props={messageList.filter(x => x.chatId == params.chatId)} /></Item>
+                </Grid>
                 <Grid item xs={6} md={4}>
-                    <Item><PrintList props={chatList[params.chatId].messages} /></Item>
+                    </Grid>
+                <Grid item xs={2} md={4}>
+                    
                 </Grid>
             </Grid>
         </Box>
@@ -86,7 +89,7 @@ export function Chats() {
 function PrintChats({ chats }) {
     console.log('PrintChats');
     console.log(chats);
-
+    const dispatch = useDispatch()
     const params = useParams();
 
     const Item = styled(Paper)(({ theme }) => ({
@@ -115,11 +118,22 @@ function PrintChats({ chats }) {
                                         secondary={chat.name}
                                     />
                                 </Material.ListItem>
+
                             </Material.List>
                         </Link>
+                        <Material.FormControl variant="standard">
+                            <Material.Button variant="contained" onClick={() => { dispatch(removeChat(index)) }
+                            }>Удалить чат</Material.Button>
+                        </Material.FormControl>
                     </Item>
                 );
             })}
+            <Item>
+                <Material.FormControl variant="standard">
+                    <Material.Button variant="contained" onClick={() => { dispatch(addChat("default chat")) }
+                    }>Добавить чат</Material.Button>
+                </Material.FormControl>
+            </Item>
         </div>
     );
 };

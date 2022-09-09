@@ -1,43 +1,10 @@
 import * as React from 'react';
 import * as Material from '@mui/material';
-
-export function PrintList({ props }) {
-    console.log('PrintList');
-console.log(props);
-    return (
-        <div className="ListItems">{
-            props.map((message, index) => {
-                return <PrintMessage key={index} author={message.author} text={message.text} index={index} />
-            })}
-        </div>
-        );
-};
-
-
-export function PrintMessage({ index, author, text }) {
-    console.log('PrintMessage');
-    let bgColor = 'primary.main';
-    
-    if(index%2 >= 1)
-    {
-        bgColor = 'warning.main';
-    }
-
-    return (
-        <Material.List sx={{ width: '100%', maxWidth: 360, bgcolor: bgColor }}>
-            <Material.ListItem alignItems="flex-start">
-            <Material.ListItemText
-                primary={author}
-                secondary={text}
-            />
-            </Material.ListItem>
-        </Material.List>
-    );
-};
+import { useParams, Link } from 'react-router-dom'
 
 export function UIForm({ updateStateApp }) {
     console.log('UIForm');
-
+    const params = useParams();
     const [author, setAuthor] = React.useState('');
     const [message, setMessage] = React.useState('');
 
@@ -72,7 +39,7 @@ export function UIForm({ updateStateApp }) {
             </Material.FormControl>
             <Material.FormControl variant="standard">
                 <Material.Button variant="contained" onClick={()=>{
-                    updateStateApp({author:author, message:message});
+                    updateStateApp({chatId: params.chatId, author:author, text:message});
                     setAuthor('');
                     setMessage('');
                 }}>Отправить</Material.Button>
