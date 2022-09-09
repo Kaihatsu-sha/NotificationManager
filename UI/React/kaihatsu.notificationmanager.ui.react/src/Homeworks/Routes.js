@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
@@ -15,7 +15,7 @@ import Main from './Main'
 import { Chats } from './Chats'
 import Profile from "./Profile";
 
-function Routed() {
+export default function Routed() {
     return (
         <BrowserRouter>
             <Navigation />
@@ -73,6 +73,4 @@ function Navigation() {
             </nav>
         </div>
     );
-}
-
-export default Routed;
+};
