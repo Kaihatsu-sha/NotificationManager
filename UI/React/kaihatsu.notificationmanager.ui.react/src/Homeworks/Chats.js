@@ -17,27 +17,10 @@ import { getMessageList, getMessageListByChatId } from '../store/Message/Selecto
 export function Chats() {
     const params = useParams();
 
-//   const getSelectedChat = React.useMemo(() => getMessageListByChatId(params.chatId), [params.chatId]);
-//   const selectedChat = useSelector(getSelectedChat);
-
     const chatList = useSelector(getChatList);
     const messageList = useSelector(getMessageList);
 
     const dispatch = useDispatch()
-
-    React.useEffect(() => {
-        if (chatList[params.chatId]) {
-            //let messagesByChatId = useSelector(getMessageListByChatId(params.chatId));
-            let messagesByChatId = messageList.filter(x => x.chatId == params.chatId);
-            console.log(messagesByChatId);
-            if (messagesByChatId.length >= 1) {
-                let lastAuthor = messagesByChatId.at(-1).author;
-                if (lastAuthor != 'robot') {
-                    dispatch(addMessage({chatId: params.chatId, author: 'robot', text: 'Bad idea' }));
-                }
-            }
-        }
-    }, [messageList]);
 
     const callBack = (callBackObject) => {
         dispatch(addMessage(callBackObject));
