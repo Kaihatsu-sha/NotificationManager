@@ -1,4 +1,8 @@
 export function getMessageList(state) {
+    if(state.persistedReducer.message)
+    {
+        return state.persistedReducer.message.messages;
+    }
     return state.message.messages;
 };
 
