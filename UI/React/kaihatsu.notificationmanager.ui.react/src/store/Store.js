@@ -7,9 +7,11 @@ import {combineReducers} from "redux";
 import profileReducer from './ProfileReducer'
 import chatReducer from './Chat/Reducer'
 import messageReducer from './Message/Reducer'
+import gitReducer from './Git/Reducer'
 
 import { СhatBot } from './Middleware/ChatBot'
 import {Logger,CrashReporter} from './Middleware/Logger'
+import {GitAPILoader} from './Middleware/GitAPI'
 
 const persistConfig = {
   key: 'root',
@@ -20,6 +22,7 @@ const rootReducer = combineReducers({
   profile: profileReducer,
   chat: chatReducer,
   message: messageReducer,
+  git: gitReducer,
 });
 // оборачиваем редьюсеры в persist
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -35,5 +38,6 @@ export default configureStore({
     [...getDefaultMiddleware(),
       СhatBot,
       Logger,
-      CrashReporter]
+      CrashReporter,
+      GitAPILoader]
 });

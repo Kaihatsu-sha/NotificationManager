@@ -14,6 +14,7 @@ import {
 import Main from './Main'
 import { Chats } from './Chats'
 import Profile from "./Profile";
+import GitPage from "./GitPage";
 
 export default function Routed() {
     return (
@@ -26,6 +27,7 @@ export default function Routed() {
                     <Route path="chats" element={<Chats></Chats>} >
                         <Route path=":chatId" element={<Chats></Chats>} />
                     </Route>
+                    <Route path="gitpage" element={<GitPage></GitPage>} />
                     <Route path="*" element={<div>NOT FOUND 404</div>} />
                 </Routes>
             </div>
@@ -68,6 +70,7 @@ function Navigation() {
                         <Link to="/" onClick={handleClickNavigation}><Button>Домашняя страница</Button></Link>
                         <Link to="profile" onClick={handleClickNavigation}><Button>Профиль</Button></Link>
                         <Link to="chats" onClick={handleClickNavigation}><Button>Чаты</Button></Link>
+                        <Link to="gitpage" onClick={handleClickNavigation}><Button>API Git</Button></Link>
                     </ButtonGroup>
                 </Box>              
             </nav>
