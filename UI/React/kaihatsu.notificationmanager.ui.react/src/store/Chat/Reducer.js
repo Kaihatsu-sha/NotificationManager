@@ -1,19 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import { addChatRepository } from "../../services/repository";
+
 const createdSlice = createSlice({
   name: 'chat',
   initialState: {
-    chats: [{ name: 'support' }],
+    chats: [],
   },
   reducers: {
     addChat: (state, action) => {
-      state.chats.push({name: action.payload});
+      addChatRepository(action.payload);
     },
     removeChat: (state, action) => {
-      if(action.payload >= 0 || action.payload < state.chats.length)
-      {
-        state.chats.splice(action.payload,1);
-      }
+      //null
     },
   },
 })

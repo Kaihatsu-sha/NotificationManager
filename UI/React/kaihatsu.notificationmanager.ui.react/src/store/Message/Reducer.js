@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import { addMessageRepository } from "../../services/repository";
+
 const createdSlice = createSlice({
   name: 'message',
   initialState: {
@@ -7,13 +9,10 @@ const createdSlice = createSlice({
   },
   reducers: {
     addMessage: (state, action) => {
-      state.messages.push(action.payload);
+      addMessageRepository(action.payload);
     },
     removeMessage: (state, action) => {
-      if(action.payload >= 0 || action.payload < state.messages.length)
-      {
-        state.messages.splice(action.payload,1);
-      }
+      //null
     },
   },
 })

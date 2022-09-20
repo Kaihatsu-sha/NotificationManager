@@ -4,35 +4,39 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // localStorage
 import {combineReducers} from "redux"; 
 
-import profileReducer from './ProfileReducer'
+import profileReducer from './Profile/Reducer'
 import chatReducer from './Chat/Reducer'
 import messageReducer from './Message/Reducer'
 import gitReducer from './Git/Reducer'
 
-import { СhatBot } from './Middleware/ChatBot'
+import { СhatBot } from './Chat/Middleware/ChatBot'
 import {Logger,CrashReporter} from './Middleware/Logger'
-import {GitAPILoader} from './Middleware/GitAPI'
+import {GitAPILoader} from './Git/Middleware/GitAPI'
+import UserReducer from './User/Reducer';
 
-const persistConfig = {
-  key: 'root',
-  storage,
-}
-// комбинируем редьюсеры
-const rootReducer = combineReducers({
-  profile: profileReducer,
-  chat: chatReducer,
-  message: messageReducer,
-  git: gitReducer,
-});
-// оборачиваем редьюсеры в persist
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+//Локальное хранение данных
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// }
+// // комбинируем редьюсеры
+// const rootReducer = combineReducers({
+//   profile: profileReducer,
+//   chat: chatReducer,
+//   message: messageReducer,
+//   git: gitReducer,
+// });
+// // оборачиваем редьюсеры в persist
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default configureStore({
   reducer: {
-    // profile: profileReducer,
-    // chat: chatReducer,
-    // message: messageReducer,
-    persistedReducer: persistedReducer,
+    profile: profileReducer,
+    chat: chatReducer,
+    message: messageReducer,
+    userIO: UserReducer,
+    git: gitReducer,
+    //persistedReducer: persistedReducer,
   },
   middleware:
     [...getDefaultMiddleware(),
@@ -40,4 +44,5 @@ export default configureStore({
       Logger,
       CrashReporter,
       GitAPILoader]
+      
 });
