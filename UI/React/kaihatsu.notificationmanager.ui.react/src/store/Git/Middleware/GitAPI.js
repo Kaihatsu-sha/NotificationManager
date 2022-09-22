@@ -1,16 +1,19 @@
 
-import { success, failure } from '../Git/Reducer'
+import { success, failure } from '../../Git/Reducer'
 
 const API_URL_PUBLIC = 'https://api.github.com/gists/public';
 
 export const GitAPILoader = ({ dispatch, getState }) => next => action => {
     //let state = getState()
     console.log("GitAPILoader");
-    console.log(getState().persistedReducer.git);//При запросе store еще не изменился
-    if (getState().persistedReducer.git.request == 1) {
-        console.log("GitAPILoader2");
-        setTimeout(() => getGists(dispatch), 10000);
-    }
+    //console.log(dispatch());
+    console.log(action);
+    console.log(next);
+    //console.log(getState().persistedReducer.git);//При запросе store еще не изменился
+    // if (getState().persistedReducer.git.request == 1) {
+    //     console.log("GitAPILoader2");
+    //     setTimeout(() => getGists(dispatch), 10000);
+    // }
 
 
     return next(action)

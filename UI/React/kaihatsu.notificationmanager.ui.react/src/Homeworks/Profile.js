@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { setName, toggleAgreement } from '../store/ProfileReducer'
+import { setName, toggleAgreement } from '../store/Profile/Reducer'
 
 export default function Profile() {
   const name = useSelector((state) => state.profile.name);

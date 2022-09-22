@@ -6,9 +6,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { request } from '../store/Git/Reducer'
 
 export default function GitPage() {
-    const gitStatus = useSelector((state) => state.persistedReducer.git.request);
-    const gitList = useSelector((state) => state.persistedReducer.git.gits);
-    const gitError = useSelector((state) => state.persistedReducer.git.error);
+    const gitStatus = useSelector((state) => state.git.request);
+    const gitList = useSelector((state) => state.git.gits);
+    const gitError = useSelector((state) => state.git.error);
 
     const dispatch = useDispatch();
 

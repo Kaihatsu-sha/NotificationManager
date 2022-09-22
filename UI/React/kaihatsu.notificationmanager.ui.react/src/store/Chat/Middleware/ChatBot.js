@@ -1,4 +1,4 @@
-import { addMessage, removeMessage } from '../Message/Reducer'
+import { addMessage, removeMessage } from '../../Message/Reducer'
 
 // standard middleware definition, with 3 nested functions:
 // 1) Accepts `{dispatch, getState}`
