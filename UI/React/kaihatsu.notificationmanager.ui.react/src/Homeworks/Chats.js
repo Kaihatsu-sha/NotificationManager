@@ -44,11 +44,11 @@ export function Chats() {
         console.log(data);
         setMessageList(data);
         
-        // if (messageList?.length == 0) {
-        //     console.log("setMessageList null");
-        //     console.log(messageList?.length);
-        //     //setMessageList([]);
-        // }       
+        if (messageList?.length == 0) {
+            console.log("setMessageList null");
+            console.log(messageList?.length);
+            //setMessageList([]);
+        }       
 
     };
 

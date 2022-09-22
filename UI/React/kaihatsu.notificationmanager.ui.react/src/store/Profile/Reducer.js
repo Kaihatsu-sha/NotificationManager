@@ -12,11 +12,11 @@ const profileSlice = createSlice({
     },
     toggleAgreement: (state) => {
       state.isAgreed = !state.isAgreed;
-      console.log(state.isAgreed);
+      //console.log(state.isAgreed);
     },
   },
 })
 
 export const { setName, toggleAgreement } = profileSlice.actions
 
-export default profileSlice.reducer
+export const  ProfileReducer =  profileSlice.reducer

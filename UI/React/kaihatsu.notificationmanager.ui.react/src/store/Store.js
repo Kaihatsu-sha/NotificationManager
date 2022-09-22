@@ -4,7 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // localStorage
 import {combineReducers} from "redux"; 
 
-import profileReducer from './Profile/Reducer'
+import {ProfileReducer} from './Profile/Reducer'
 import chatReducer from './Chat/Reducer'
 import messageReducer from './Message/Reducer'
 import gitReducer from './Git/Reducer'
@@ -31,7 +31,7 @@ import UserReducer from './User/Reducer';
 
 export default configureStore({
   reducer: {
-    profile: profileReducer,
+    profile: ProfileReducer,
     chat: chatReducer,
     message: messageReducer,
     userIO: UserReducer,
